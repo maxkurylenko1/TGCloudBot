@@ -1,0 +1,47 @@
+# кореневий .editorconfig
+root = true
+
+# базові правила для всіх файлів
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true
+
+# TypeScript / JavaScript / JSON
+[*.{ts,tsx,js,jsx,json,cjs,mjs}]
+indent_style = space
+indent_size = 2
+
+# YAML (GitHub Actions, CI, kube, etc.)
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+
+# Markdown — не зрізаємо пробіли в кінці (часто означають переведення рядка)
+[*.md]
+trim_trailing_whitespace = false
+indent_style = space
+indent_size = 2
+
+# Makefile — завжди таби (вимога make)
+[Makefile]
+indent_style = tab
+
+# Shell / Docker
+[*.{sh,bash}]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+
+[Dockerfile]
+indent_style = space
+indent_size = 2
+
+# env-файли: не чіпаємо пробіли після ключів
+[*.env]
+trim_trailing_whitespace = false
+indent_style = space
+indent_size = 2
