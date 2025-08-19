@@ -11,10 +11,8 @@
   },
   "dependencies": {
     "telegraf": "^4.16.3",
-    "@config/core": "*",
-    "@cf/client": "*",
-    "@telegram/kit": "*",
-    "@shared/types": "*"
+    "@config/core": "workspace:*",
+    "@shared/types": "workspace:*"
   },
   "devDependencies": {
     "ts-node": "^10.9.2",

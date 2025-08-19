@@ -13,8 +13,7 @@
     "express": "^4.19.2",
     "helmet": "^7.1.0",
     "morgan": "^1.10.0",
-    "@config/core": "*",
-    "@telegram/kit": "*"
+    "@config/core": "workspace:*"
   },
   "devDependencies": {
     "ts-node": "^10.9.2",
