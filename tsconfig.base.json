@@ -4,7 +4,7 @@
     "module": "CommonJS",
     "moduleResolution": "Node",
     "strict": true,
-    "lib": ["ES2019"],
+    "lib": ["ES2019", "DOM"],
     "outDir": "dist",
     "esModuleInterop": true,
     "skipLibCheck": true,
