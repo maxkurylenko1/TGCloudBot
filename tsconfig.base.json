@@ -4,15 +4,12 @@
     "module": "CommonJS",
     "moduleResolution": "Node",
     "strict": true,
+    "lib": ["ES2019", "DOM"],
     "outDir": "dist",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "baseUrl": ".",
-    "paths": {
-      "@shared/*": ["packages/shared/src/*"],
-      "@config/*": ["packages/config/src/*"]
-    }
+    "baseUrl": "."
   }
 }

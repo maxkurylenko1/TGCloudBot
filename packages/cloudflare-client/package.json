@@ -4,13 +4,10 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "build": "tsc -p tsconfig.json"
   },
   "dependencies": {
+    "@shared/types": "workspace:*",
     "axios": "^1.7.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.4.0"
   }
 }
