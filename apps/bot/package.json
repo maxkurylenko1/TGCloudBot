@@ -5,19 +5,21 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "dev": "ts-node --esm src/index.ts",
+    "dev": "dotenv -e .env.local -- tsx watch src/index.ts",
     "build": "tsc -p tsconfig.json",
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "telegraf": "^4.16.3",
-    "@config/core": "workspace:*",
     "@cf/client": "workspace:*",
+    "@config/core": "workspace:*",
+    "@shared/types": "workspace:*",
     "@telegram/kit": "workspace:*",
-    "@shared/types": "workspace:*"
+    "telegraf": "^4.16.3"
   },
   "devDependencies": {
-    "ts-node": "^10.9.2",
+    "cross-env": "^10.0.0",
+    "dotenv-cli": "^10.0.0",
+    "tsx": "^4.20.4",
     "typescript": "^5.4.0"
   }
 }

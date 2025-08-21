@@ -24,7 +24,7 @@ export function loadEnv(raw: NodeJS.ProcessEnv = process.env): Env {
   const parsed = EnvSchema.safeParse(raw);
   if (!parsed.success) {
     console.error('Invalid environment variables:', parsed.error.flatten().fieldErrors);
-    process.exit(1);
+    throw new Error(JSON.stringify(parsed.error.flatten().fieldErrors));
   }
   return parsed.data;
 }
