@@ -1,9 +1,8 @@
 import { Telegraf } from 'telegraf';
-import { loadEnv } from '@config/core/src/env';
-import { logger } from '@config/core/src/logger';
+import { loadEnv, logger } from '@config/core';
 import { CloudflareClient } from '@cf/client';
-import { allowedChatGuard } from '@telegram/kit/src/guards';
-import { TelegramHttpMessenger } from '@telegram/kit/src/messenger';
+import { allowedChatGuard } from '@telegram/kit';
+// import { TelegramHttpMessenger } from '@telegram/kit/src/messenger';
 import { registerDomain } from './commands/registerDomain';
 import { dnsAdd } from './commands/dnsAdd';
 import { dnsUpdate } from './commands/dnsUpdate';
@@ -11,7 +10,7 @@ import { dnsDelete } from './commands/dnsDelete';
 import type { TelegrafContext } from './types';
 
 const env = loadEnv();
-const bot = new Telegraf<TelegrafContext>(env.TELEGRAM_BOT_TOKEN);
+const bot = new Telegraf<TelegrafContext>(env.TELEGRAM_BOT_TOKEN!);
 
 // DI: Cloudflare client у контекст
 bot.use(async (ctx, next) => {
@@ -20,7 +19,7 @@ bot.use(async (ctx, next) => {
 });
 
 // Guard за chatId
-bot.use(allowedChatGuard(env.BOT_ALLOWED_CHAT_ID));
+bot.use(allowedChatGuard(env.BOT_ALLOWED_CHAT_ID!));
 
 bot.start((ctx) => ctx.reply('Бот готовий. Використовуйте /help для списку команд.'));
 bot.help((ctx) =>
