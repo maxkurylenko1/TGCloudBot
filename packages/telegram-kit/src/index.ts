@@ -1,3 +1,4 @@
 import { allowedChatGuard } from './guards';
+import { TelegramHttpMessenger } from './messenger';
 
-export { allowedChatGuard };
+export { allowedChatGuard, TelegramHttpMessenger };
