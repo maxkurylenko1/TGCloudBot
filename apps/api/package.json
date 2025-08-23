@@ -5,18 +5,23 @@
   "main": "dist/server.js",
   "types": "dist/server.d.ts",
   "scripts": {
-    "dev": "ts-node --esm src/server.ts",
+    "dev": "dotenv -e .env.local -- tsx watch src/server.ts",
     "build": "tsc -p tsconfig.json",
-    "start": "node dist/server.js"
+    "start": "dotenv -e .env -- node dist/server.js"
   },
   "dependencies": {
+    "@config/core": "workspace:*",
+    "@telegram/kit": "workspace:*",
     "express": "^4.19.2",
     "helmet": "^7.1.0",
-    "morgan": "^1.10.0",
-    "@config/core": "workspace:*"
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "ts-node": "^10.9.2",
+    "@types/express": "^5.0.3",
+    "@types/morgan": "^1.9.10",
+    "cross-env": "^10.0.0",
+    "dotenv-cli": "^10.0.0",
+    "tsx": "^4.20.4",
     "typescript": "^5.4.0"
   }
 }
