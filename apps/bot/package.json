@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "dotenv -e .env.local -- tsx watch src/index.ts",
     "build": "tsc -p tsconfig.json",
-    "start": "node dist/index.js"
+    "start": "dotenv -e .env node dist/index.js"
   },
   "dependencies": {
     "@cf/client": "workspace:*",

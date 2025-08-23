@@ -8,6 +8,7 @@ import { dnsAdd } from './commands/dnsAdd';
 import { dnsUpdate } from './commands/dnsUpdate';
 import { dnsDelete } from './commands/dnsDelete';
 import type { TelegrafContext } from './types';
+import { findZone } from './commands/findZone';
 
 const env = loadEnv();
 const bot = new Telegraf<TelegrafContext>(env.TELEGRAM_BOT_TOKEN!);
@@ -32,6 +33,7 @@ bot.command('register_domain', registerDomain());
 bot.command('dns_add', dnsAdd());
 bot.command('dns_update', dnsUpdate());
 bot.command('dns_delete', dnsDelete());
+bot.command('find_zone', findZone());
 
 if (env.BOT_MODE === 'polling') {
   bot.launch().then(() => logger.info('Bot launched in polling mode'));
