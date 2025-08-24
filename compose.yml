@@ -1,0 +1,30 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    container_name: tgcloudbot-api
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - PORT=${API_PORT:-3000}
+    ports:
+      - '8080:3000'
+    networks:
+      - web
+
+  bot:
+    build:
+      context: .
+      dockerfile: apps/bot/Dockerfile
+    container_name: tgcloudbot-bot
+    restart: unless-stopped
+    env_file: .env
+    # depends_on:
+    #   - api          # якщо бот звертається до API; інакше видали
+    networks:
+      - web
+
+networks:
+  web:
+    driver: bridge
