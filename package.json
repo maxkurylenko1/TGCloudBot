@@ -6,7 +6,11 @@
     "build:all": "turbo run build",
     "dev:all": "turbo run dev",
     "lint:all": "turbo run lint",
-    "typecheck:all": "turbo run typecheck"
+    "typecheck:all": "turbo run typecheck",
+    "dev:api": "pnpm --filter api dev",
+    "dev:bot": "pnpm --filter bot dev",
+    "start:api": "pnpm --filter api start",
+    "start:bot": "pnpm --filter bot start"
   },
   "devDependencies": {
     "turbo": "^2.0.0",
