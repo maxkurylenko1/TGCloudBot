@@ -1,0 +1,11 @@
+**/node_modules
+**/.turbo
+**/dist
+**/build
+.git
+.gitignore
+.env
+*.log
+Dockerfile
+apps/*/Dockerfile
+compose.yml

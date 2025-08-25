@@ -1,8 +1,7 @@
 import express from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
-import { loadEnv } from '@config/core/src/env';
-import { logger } from '@config/core/src/logger';
+import { loadEnv, logger } from '@config/core';
 import { TelegramHttpMessenger } from '@telegram/kit';
 
 const env = loadEnv();
@@ -27,7 +26,7 @@ app.all('/echo', async (req, res) => {
   };
   try {
     await messenger.sendMessage(
-      env.BOT_ALLOWED_CHAT_ID,
+      env.BOT_ALLOWED_CHAT_ID!,
       `HTTP ${info.method} ${info.path}\nIP: ${ip}`,
     );
   } catch (e: any) {
