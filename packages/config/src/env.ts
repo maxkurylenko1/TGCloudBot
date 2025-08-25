@@ -10,7 +10,6 @@ const EnvSchema = z.object({
     .transform((v) => BigInt(v))
     .or(z.bigint()),
   TELEGRAM_WEBHOOK_SECRET: z.string().optional(),
-  BOT_MODE: z.enum(['polling', 'webhook']).default('polling'),
 
   CF_API_TOKEN: z.string().min(10),
   CF_ACCOUNT_ID: z.string().min(5),
