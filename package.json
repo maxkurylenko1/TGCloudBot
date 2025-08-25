@@ -4,11 +4,10 @@
   "packageManager": "pnpm@9.0.0",
   "scripts": {
     "build:all": "turbo run build",
-    "dev:all": "turbo run dev",
+    "build:packages": "pnpm --filter \"./packages/**\" run build",
+    "dev:all": "turbo run dev --parallel",
     "lint:all": "turbo run lint",
     "typecheck:all": "turbo run typecheck",
-    "dev:api": "pnpm --filter api dev",
-    "dev:bot": "pnpm --filter bot dev",
     "start:api": "pnpm --filter api start",
     "start:bot": "pnpm --filter bot start"
   },

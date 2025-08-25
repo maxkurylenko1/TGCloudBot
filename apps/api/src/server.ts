@@ -35,8 +35,4 @@ app.all('/echo', async (req, res) => {
   res.json(info);
 });
 
-// (Опц.) Якщо хочете тримати webhook у цьому ж сервісі, імпортуйте callback з apps/bot (моно-сервіс варіант)
-// import { webhookCallback } from '../../bot/src/index';
-// app.post(`/telegram/webhook/${process.env.TELEGRAM_WEBHOOK_SECRET}`, webhookCallback);
-
 app.listen(env.API_PORT, () => logger.info(`API listening on :${env.API_PORT}`));

@@ -35,9 +35,7 @@ bot.command('dns_update', dnsUpdate());
 bot.command('dns_delete', dnsDelete());
 bot.command('find_zone', findZone());
 
-if (env.BOT_MODE === 'polling') {
-  bot.launch().then(() => logger.info('Bot launched in polling mode'));
-}
+bot.launch().then(() => logger.info('Bot launched in polling mode'));
 
 // Webhook режим (опційно; сервиться через apps/api або окремий HTTP-сервер)
 export const webhookCallback = bot.webhookCallback('/telegram/webhook');
